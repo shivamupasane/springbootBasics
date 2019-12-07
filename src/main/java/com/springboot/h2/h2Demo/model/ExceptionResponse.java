@@ -5,12 +5,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ExceptionResponse {
-private HttpStatus code;
+private int code;
 private String description;
-public HttpStatus getCode() {
+public int getCode() {
 	return code;
 }
-public void setCode(HttpStatus badRequest) {
+public void setCode(int badRequest) {
 	this.code = badRequest;
 }
 public String getDescription() {

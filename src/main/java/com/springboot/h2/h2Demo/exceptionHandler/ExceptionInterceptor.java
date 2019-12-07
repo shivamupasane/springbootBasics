@@ -1,6 +1,5 @@
-package com.springboot.h.hDemo.exceptionHandler;
+package com.springboot.h2.h2Demo.exceptionHandler;
 
-import javax.validation.ConstraintViolationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +12,9 @@ import com.springboot.h2.h2Demo.model.ExceptionResponse;
 public class ExceptionInterceptor {
 
 	@ExceptionHandler(Exception.class)
-	public final ResponseEntity <ExceptionResponse> handleConstraintViolationException(ConstraintViolationException ex) {
+	public final ResponseEntity <ExceptionResponse> handleConstraintViolationException(Exception ex) {
 	ExceptionResponse eR = new ExceptionResponse();
-	eR.setCode(HttpStatus.BAD_REQUEST);
+	eR.setCode(HttpStatus.BAD_REQUEST.value());
 	eR.setDescription(ex.getMessage());
 	System.out.println("insideglobalexception");
 	return new ResponseEntity<ExceptionResponse>(eR, HttpStatus.BAD_REQUEST);
